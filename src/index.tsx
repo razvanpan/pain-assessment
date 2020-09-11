@@ -1,10 +1,14 @@
 import * as React from 'react'
-import styles from './styles.module.css'
+import HeaderEx from './components/header-component/header-component'
+import CardDefault from './components/body-component/body-component'
+import Footer from './components/footer-component/footer-component'
 
-interface Props {
-  text: string
-}
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const PainAssessment = () => {
+  return (
+    <div>
+      <HeaderEx></HeaderEx>
+      <CardDefault></CardDefault>
+      <Footer></Footer>
+    </div>
+  )
 }

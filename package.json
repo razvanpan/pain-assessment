@@ -61,6 +61,9 @@
     "dist"
   ],
   "dependencies": {
+    "node-sass": "^4.14.1",
+    "terra-action-footer": "^2.52.0",
+    "terra-action-header": "^2.56.0",
     "terra-button": "^3.47.0"
   }
 }
