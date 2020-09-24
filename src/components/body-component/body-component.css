@@ -1,0 +1,22 @@
+.body {
+  background-color: #ebf3fb;
+  padding-top: 19px;
+  scroll-behavior: auto;
+  margin-top: 5%;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+}
+
+.inbody {
+  background-color: #ebf3fb;
+  border: 0;
+}
+
+.button {
+  margin-left: 15px;
+  margin-right: 15px;
+}

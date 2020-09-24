@@ -17,11 +17,15 @@
     "@types/node": "file:../node_modules/@types/node",
     "@types/react": "file:../node_modules/@types/react",
     "@types/react-dom": "file:../node_modules/@types/react-dom",
+    "pain-assessment": "file:..",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
-    "typescript": "file:../node_modules/typescript",
-    "pain-assessment": "file:.."
+    "terra-action-footer": "^2.52.0",
+    "terra-action-header": "^2.56.0",
+    "terra-button": "^3.47.0",
+    "terra-card": "^3.34.0",
+    "typescript": "file:../node_modules/typescript"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

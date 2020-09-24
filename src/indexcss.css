@@ -1,0 +1,11 @@
+.index {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  border-top: solid;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.inindex {
+  resize: vertical;
+}

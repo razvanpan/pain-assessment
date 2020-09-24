@@ -61,6 +61,15 @@
     "dist"
   ],
   "dependencies": {
-    "terra-button": "^3.47.0"
+    "node-sass": "^4.14.1",
+    "react-intl": "^5.8.1",
+    "terra-action-footer": "^2.52.0",
+    "terra-action-header": "^2.56.0",
+    "terra-button": "^3.47.0",
+    "terra-collapsible-menu-view": "^6.40.0",
+    "terra-hyperlink": "^2.40.0",
+    "terra-menu": "^6.40.0",
+    "terra-overlay": "^3.56.0",
+    "terra-section-header": "^2.42.0"
   }
 }
