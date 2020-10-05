@@ -12,7 +12,7 @@ const Icon = <IconRollup />
 
 const PainAssessmentHeader = () => (
   <div className={headercss('header')}>
-    <div className={headercss('inheader')}>
+    <div className={headercss('interiorheader')}>
       <SectionHeaderExampleTemplate
         title='Pain Assessment'
         exampleProps={sectionHeaderProps}
