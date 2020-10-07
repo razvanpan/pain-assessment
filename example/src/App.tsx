@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ButtonVariant from './components/pain-assessment-component/pain-assessment'
-
+import { PainAssessment } from 'pain-assessment'
+import 'pain-assessment/dist/index.css'
 const App = () => {
-  return <ButtonVariant></ButtonVariant>
+  return <PainAssessment></PainAssessment>
 }
 
 export default App
