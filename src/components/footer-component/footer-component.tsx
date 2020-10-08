@@ -7,22 +7,44 @@ import classNames from 'classnames/bind'
 import styles from './footer-component.css'
 const footercss = classNames.bind(styles)
 
-const PainAssessmentFooter = () => (
-  <BlockActionFooter>
-    <div className={footercss('footer')}>
-      <React.Fragment>
-        <div className={footercss('infooter')}>
-          <Spacer isInlineBlock marginRight='medium'>
-            <Button
-              text='Submit'
-              variant={Button.Opts.Variants.EMPHASIS}
-              onClick={() => alert('Submitted!')}
-            />
-          </Spacer>
-          <Button text='Cancel' />
+class PainAssessmentFooter extends React.Component<{
+  onSubmit: () => void
+  onCancel: () => void
+}> {
+  constructor(props) {
+    super(props)
+    this.submitHandler = this.submitHandler.bind(this)
+    this.cancelHandler = this.cancelHandler.bind(this)
+  }
+
+  submitHandler(event) {
+    event.preventDefault()
+    this.props.onSubmit()
+  }
+
+  cancelHandler(event) {
+    event.preventDefault()
+    this.props.onCancel()
+  }
+  render() {
+    return (
+      <BlockActionFooter>
+        <div className={footercss('footer')}>
+          <React.Fragment>
+            <div className={footercss('infooter')}>
+              <Spacer isInlineBlock marginRight='medium'>
+                <Button
+                  text='Submit'
+                  variant={Button.Opts.Variants.EMPHASIS}
+                  onClick={this.props.onSubmit}
+                />
+              </Spacer>
+              <Button text='Cancel' onClick={this.props.onCancel} />
+            </div>
+          </React.Fragment>
         </div>
-      </React.Fragment>
-    </div>
-  </BlockActionFooter>
-)
+      </BlockActionFooter>
+    )
+  }
+}
 export default PainAssessmentFooter
