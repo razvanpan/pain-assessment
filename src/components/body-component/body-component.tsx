@@ -6,21 +6,58 @@ import classNames from 'classnames/bind'
 import styles from './body-component.css'
 
 const bodycss = classNames.bind(styles)
-const PainAssessmentBody = () => (
-  <div className={bodycss('body')}>
-    <Card>
-      <div className={bodycss('inbody')}>
-        <Button text='1' variant='action' className={bodycss('button')} />
-        <Button text='2' variant='action' className={bodycss('button')} />
-        <Button text='3' variant='action' className={bodycss('button')} />
-        <Button text='4' variant='action' className={bodycss('button')} />
-        <Button text='5' variant='action' className={bodycss('button')} />
-        <Button text='6' variant='action' className={bodycss('button')} />
-        <Button text='7' variant='action' className={bodycss('button')} />
-        <Button text='8' variant='action' className={bodycss('button')} />
-        <Button text='9' variant='action' className={bodycss('button')} />
+type button = {
+  inputButton: number
+  buttonList: any[]
+}
+class PainAssessmentBody extends React.Component<
+  { onInput: (name: number) => void },
+  button
+> {
+  constructor(props) {
+    super(props)
+    this.getButton = this.getButton.bind(this)
+    this.state = {
+      inputButton: -1,
+      buttonList: []
+    }
+  }
+
+  getButton(label) {
+    this.setState({ inputButton: label })
+    this.props.onInput(this.state.inputButton)
+  }
+
+  buttons() {
+    const buttons: Button = []
+    for (let i = 1; i <= 9; i++) {
+      const button = (
+        <Button
+          text={i}
+          variant='action'
+          className={bodycss('button')}
+          onClick={() => this.getButton(i)} //onClick = {() => this.getButton(params)}
+        />
+      )
+      buttons.push(button)
+    }
+    this.setState({
+      buttonList: buttons
+    })
+  }
+
+  componentDidMount() {
+    this.buttons()
+  }
+
+  render() {
+    return (
+      <div className={bodycss('body')}>
+        <Card>
+          <div className={bodycss('inbody')}>{this.state.buttonList}</div>
+        </Card>
       </div>
-    </Card>
-  </div>
-)
+    )
+  }
+}
 export default PainAssessmentBody
