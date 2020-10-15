@@ -9,12 +9,10 @@ const footercss = classNames.bind(styles)
 
 class PainAssessmentFooter extends React.Component<{
   onSubmit: () => void
- 
 }> {
   constructor(props) {
     super(props)
     this.submitHandler = this.submitHandler.bind(this)
-   
   }
 
   submitHandler(event) {
@@ -35,7 +33,6 @@ class PainAssessmentFooter extends React.Component<{
                   onClick={this.props.onSubmit}
                 />
               </Spacer>
-              
             </div>
           </React.Fragment>
         </div>

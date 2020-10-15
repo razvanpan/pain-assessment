@@ -11,35 +11,35 @@ const headercss = classNames.bind(styles)
 const sectionHeaderProps = { isTransparent: true }
 const Icon = <IconRollup />
 
-class PainAssessmentHeader extends React.Component<{closeAction:()=>void},{
-  showDropDown:boolean}> {
-    constructor(props) {
-      super(props)
-      this.toggleDropDown = this.toggleDropDown.bind(this)
-      this.closeAction = this.closeAction.bind(this)
-      this.state = {
-        showDropDown:false
-      }
-    } 
-      toggleDropDown(){
-        this.setState({
-          showDropDown:true,
-        })
-      }
-      
-      closeAction(){
-        this.setState({
-          showDropDown:false,
-        })
-        this.props.closeAction();
-        
-      }
+class PainAssessmentHeader extends React.Component<
+  { closeAction: () => void },
+  {
+    showDropDown: boolean
+  }
+> {
+  constructor(props) {
+    super(props)
+    this.toggleDropDown = this.toggleDropDown.bind(this)
+    this.closeAction = this.closeAction.bind(this)
+    this.state = {
+      showDropDown: false
+    }
+  }
+  toggleDropDown() {
+    this.setState({
+      showDropDown: true
+    })
+  }
 
+  closeAction() {
+    this.setState({
+      showDropDown: false
+    })
+    this.props.closeAction()
+  }
 
-
-
-    render(){
-      return(
+  render() {
+    return (
       <div className={headercss('header')}>
         <div className={headercss('interiorheader')}>
           <SectionHeaderExampleTemplate
@@ -48,17 +48,15 @@ class PainAssessmentHeader extends React.Component<{closeAction:()=>void},{
           />
         </div>
         <div className={headercss('buttonheader')}>
-          <Button
-            icon={Icon}
-            variant='ghost'
-            onClick={this.toggleDropDown}/>
-          
+          <Button icon={Icon} variant='ghost' onClick={this.toggleDropDown} />
         </div>
         <div className={headercss('hiddenbutton')}>
-             {this.state.showDropDown && <Button  text='Close' variant='neutral' onClick={this.closeAction}/>}
-            </div>
+          {this.state.showDropDown && (
+            <Button text='Close' variant='neutral' onClick={this.closeAction} />
+          )}
+        </div>
       </div>
-    
-      )
-    }}
+    )
+  }
+}
 export default PainAssessmentHeader
