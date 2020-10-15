@@ -6,13 +6,17 @@ import styles from './painAssessmentContainer.css'
 import classNames from 'classnames/bind'
 import axios from 'axios'
 const indexcss = classNames.bind(styles)
-class PainAssessmentContainer extends React.Component<{}, { inputNumber: number }> {
+class PainAssessmentContainer extends React.Component<
+  {},
+  { inputNumber: number; close: boolean }
+> {
   constructor(props) {
     super(props)
-    this.state = { inputNumber: 0 }
+    this.state = { inputNumber: 0, close: true }
     this.onSubmit = this.onSubmit.bind(this)
     this.onCancel = this.onCancel.bind(this)
     this.onInput = this.onInput.bind(this)
+    this.onClose = this.onClose.bind(this)
   }
   onSubmit() {
     const data = { painAssessment: this.state.inputNumber }
@@ -34,17 +38,24 @@ class PainAssessmentContainer extends React.Component<{}, { inputNumber: number 
   onInput(number) {
     this.setState({ inputNumber: number })
   }
+  onClose() {
+    this.setState({ close: false })
+  }
+
   render() {
     return (
-      <div className={indexcss('index')}>
-        <PainAssessmentHeader />
+      <div>
+        {this.state.close && (
+          <div className={indexcss('index')}>
+            <PainAssessmentHeader closeAction={this.onClose} />
 
-        <PainAssessmentBody onInput={this.onInput}></PainAssessmentBody>
+            <PainAssessmentBody onInput={this.onInput}></PainAssessmentBody>
 
-        <PainAssessmentFooter
-          onSubmit={this.onSubmit}
-          onCancel={this.onCancel}
-        ></PainAssessmentFooter>
+            <PainAssessmentFooter
+              onSubmit={this.onSubmit}
+            ></PainAssessmentFooter>
+          </div>
+        )}
       </div>
     )
   }

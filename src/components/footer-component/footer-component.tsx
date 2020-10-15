@@ -9,12 +9,10 @@ const footercss = classNames.bind(styles)
 
 class PainAssessmentFooter extends React.Component<{
   onSubmit: () => void
-  onCancel: () => void
 }> {
   constructor(props) {
     super(props)
     this.submitHandler = this.submitHandler.bind(this)
-    this.cancelHandler = this.cancelHandler.bind(this)
   }
 
   submitHandler(event) {
@@ -22,10 +20,6 @@ class PainAssessmentFooter extends React.Component<{
     this.props.onSubmit()
   }
 
-  cancelHandler(event) {
-    event.preventDefault()
-    this.props.onCancel()
-  }
   render() {
     return (
       <BlockActionFooter>
@@ -39,7 +33,6 @@ class PainAssessmentFooter extends React.Component<{
                   onClick={this.props.onSubmit}
                 />
               </Spacer>
-              <Button text='Cancel' onClick={this.props.onCancel} />
             </div>
           </React.Fragment>
         </div>

@@ -36,7 +36,7 @@ class PainAssessmentBody extends React.Component<
           text={i}
           variant='action'
           className={bodycss('button')}
-          onClick={() => this.getButton(i)} 
+          onClick={() => this.getButton(i)}
         />
       )
       buttons.push(button)
