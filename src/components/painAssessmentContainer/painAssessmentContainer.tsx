@@ -6,14 +6,14 @@ import styles from './painAssessmentContainer.css'
 import classNames from 'classnames/bind'
 import axios from 'axios'
 const indexcss = classNames.bind(styles)
-class PainAssessmentContainer extends React.Component<{}, { inputNumber: number ,close:boolean}> {
+class PainAssessmentContainer extends React.Component<{}, { inputNumber: number , close: boolean}> {
   constructor(props) {
     super(props)
-    this.state = { inputNumber: 0,close:true }
+    this.state = { inputNumber: 0, close: true }
     this.onSubmit = this.onSubmit.bind(this)
     this.onCancel = this.onCancel.bind(this)
     this.onInput = this.onInput.bind(this)
-    this.OnClose=this.OnClose.bind(this)
+    this.onClose=this.onClose.bind(this)
 
   }
   onSubmit() {
@@ -36,7 +36,7 @@ class PainAssessmentContainer extends React.Component<{}, { inputNumber: number 
   onInput(number) {
     this.setState({ inputNumber: number })
   }
-  OnClose(){
+  onClose(){
     this.setState({close:false})
 
 
@@ -47,7 +47,7 @@ class PainAssessmentContainer extends React.Component<{}, { inputNumber: number 
       <div>
         {this.state.close&&
       <div className={indexcss('index')}>
-        <PainAssessmentHeader closeAction={this.OnClose} />
+        <PainAssessmentHeader closeAction={this.onClose} />
 
         <PainAssessmentBody onInput={this.onInput}></PainAssessmentBody>
 
